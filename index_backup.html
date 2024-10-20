@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <style>
+        /* Table styles */
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Body styles */
+        body {
+            background-image: url('BG_img.jpg'); /* Background image */
+            background-size: cover; /* Ensure the image covers the entire background */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* No repeating background */
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        /* Header styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed; /* Fixed header position */
+            width: 100%;
+            top: 0;
+            z-index: 100; /* Ensure the header stays on top */
+        }
+
+        /* Navigation menu styles */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 20px;
+            padding-top: 80px; /* Adjust for fixed header */
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="loadHeader()">
+
+    <!-- Header placeholder -->
+    <div id="header"></div>
+
+    <!-- Main content -->
+    <main>
+        <h1>Welcome to the Ottoman Empire Migration Page</h1>
+        <h2>Historical Context</h2>
+        <p>The Ottoman Empire spanned from the late 13th century until the early 20th century, covering large parts of Southeast Europe, Western Asia, and North Africa.</p>
+    </main>
+
+    <!-- Simple Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Laptop</td>
+                <td>$1000</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Smartphone</td>
+                <td>$600</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // JavaScript to load header dynamically
+        function loadHeader() {
+            fetch('header.html') // Assuming 'header.html' is in the same folder
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading header:', error));
+        }
+    </script>
+
+</body>
+</html>
